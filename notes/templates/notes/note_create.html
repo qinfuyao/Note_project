@@ -1,0 +1,20 @@
+<!-- notes/templates/notes/note_create.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>新建笔记</title>
+</head>
+<body>
+    <h1>创建新笔记</h1>
+    <form method="POST">
+        <!-- Django 默认防CSRF，需要加 {% csrf_token %} -->
+        {% csrf_token %}
+        <p>标题：<input type="text" name="title"></p>
+        <p>内容：<textarea name="content"></textarea></p>
+        <button type="submit">提交</button>
+    </form>
+    <a href="{% url 'note_list' %}">返回笔记列表</a>
+</body>
+</html>

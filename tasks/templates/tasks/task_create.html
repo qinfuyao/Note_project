@@ -1,0 +1,18 @@
+<!-- tasks/templates/tasks/task_create.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>创建任务</title>
+</head>
+<body>
+    <h1>创建新任务</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">创建</button>
+    </form>
+    <a href="{% url 'task_list' %}">返回任务列表</a>
+</body>
+</html>

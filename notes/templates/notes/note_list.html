@@ -1,0 +1,22 @@
+<!-- notes/templates/notes/note_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>笔记列表</title>
+</head>
+<body>
+    <h1>笔记列表</h1>
+    <a href="{% url 'note_create' %}">创建新笔记</a>
+
+    <ul>
+        {% for note in notes %}
+            <li>
+                <strong>{{ note.title }}</strong> - {{ note.created_at }}<br>
+                {{ note.content }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

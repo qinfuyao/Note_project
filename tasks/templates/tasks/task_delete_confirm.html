@@ -1,0 +1,18 @@
+<!-- tasks/templates/tasks/task_delete_confirm.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>删除任务</title>
+</head>
+<body>
+    <h1>删除任务：{{ task.title }}</h1>
+    <p>确定要删除这个任务吗？</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">确认删除</button>
+        <a href="{% url 'task_list' %}">取消</a>
+    </form>
+</body>
+</html>
